@@ -1,0 +1,21 @@
+<%@ Master Language="C#" CodeBehind="MasterPage.aspx.cs" Inherits="WebformVue.Master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+</head>
+<body>
+<div>
+    <asp:ContentPlaceHolder id="body"
+                            runat="server">
+
+    </asp:ContentPlaceHolder>
+</div>
+<asp:ContentPlaceHolder id="script"
+                        runat="server">
+</asp:ContentPlaceHolder>
+</body>
+</html>
