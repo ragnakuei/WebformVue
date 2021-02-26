@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="apis\TestViewModelApi.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="lib\bootstrap\dist\css\bootstrap-grid.css" />
@@ -97,6 +98,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="apis\TestViewModelApi.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TestViewModelApi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="apis\TestViewModelApi.aspx.designer.cs">
+      <DependentUpon>TestViewModelApi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,6 +125,7 @@
     </Compile>
     <Compile Include="Models\CustomOptionItem.cs" />
     <Compile Include="Models\TestViewModel.cs" />
+    <Compile Include="Models\ValidateResponse.cs" />
     <Compile Include="Models\ValidateViewModel.cs" />
     <Compile Include="Parameters\Gendor.cs" />
     <Compile Include="Parameters\SchoolType.cs" />

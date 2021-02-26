@@ -188,7 +188,8 @@
       const gendors   = <%= GendorsJson %>;
       const schools   = <%= SchoolOptionsJson %>;
       const interests = <%= InterestsJson %>;
-      const submitUrl = '';
+      const validateUrl = '/apis/TestViewModelApi.aspx/Validate';
+      const submitUrl = '/apis/TestViewModelApi.aspx/Submit';
       const actionName = '新增';
       const vm = {
 
@@ -231,7 +232,7 @@
 
             // 向後端進行驗証
             function validateViewModel(){
-              axios.post('/Home/Validate',
+              axios.post(validateUrl,
                          {
                              ValidateProperties: Array.from(ValidateProperties),
                              ViewModel: vModel.ViewModel,
@@ -242,7 +243,7 @@
                             }
                          })
                     .then(response => {
-                        const responseDto = response.data;
+                        const responseDto = response.data.d;
 
                         if (responseDto.StatusCode === 200 )
                         {
@@ -272,11 +273,17 @@
                               }
                            })
                       .then(response => {
-                          const responseDto = response.data;
+                          const responseDto = response.data.d;
                              if (responseDto.StatusCode === 200 )
                           {
-                              alert(actionName + "成功");
-                              window.location.href = '/Home';
+                              const modelString = JSON.stringify(responseDto.Model);
+
+                              alert(`${actionName} 成功
+
+Submit Model 內容如下：
+${modelString}
+`);
+                              console.log(responseDto);
                           }
                           else if (responseDto.StatusCode === 400 )
                           {

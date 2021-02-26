@@ -7,21 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebformVue {
+namespace WebformVue.apis {
     
     
-    public partial class Default {
-        
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new WebformVue.MasterPage Master {
-            get {
-                return ((WebformVue.MasterPage)(base.Master));
-            }
-        }
+    public partial class TestViewModelApi {
     }
 }
